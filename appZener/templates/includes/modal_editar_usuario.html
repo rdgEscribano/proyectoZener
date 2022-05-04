@@ -1,0 +1,51 @@
+<!-- Modal -->
+<div class="modal fade" id="modalEditarUsuario" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" data-bs-keyboard="false" data-bs-backdrop="static" >
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Usuario</h5>
+        <button type="button" class="btn-close btnCerrar" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="card">
+                <div class="card-body">
+                    <form id="editarUsuario" action="/editarUsuario/" method="POST">{% csrf_token %}
+                        <input type="hidden" id="pk" name="pk" value="{{usuario.pk}}">
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1" class="form-label">Nombre Usuario</label>
+                            <input type="text" id="nombre" name="nombre" value="{{usuario.usuario.first_name}}" class="form-control" minlength="3" maxlength="30" placeholder="Nombre" autofocus required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1" class="form-label">Apellidos</label>
+                            <input type="text" id="apellidos" name="apellidos" value="{{usuario.usuario.last_name}}" class="form-control" minlength="3" maxlength="70" placeholder="Apellidos" autofocus required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1" class="form-label">Teléfono</label>
+                            <input type="number" id="telefono" name="telefono" value="{{usuario.telefono}}" class="form-control" minlength="9" maxlength="11" placeholder="Telefono" autofocus required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1" class="form-label">Email</label>
+                            <input type="email" id="correo" name="correo" value="{{usuario.correo_electronico}}" class="form-control" placeholder="name@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress" class="form-label">Dirección</label>
+                            <input type="text" id="direccion" name="direccion" value="{{usuario.direccion}}" class="form-control" placeholder="1234 Main St">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1" class="form-label">Localidad</label>
+                            <input type="text" id="localidad" name="localidad" value="{{usuario.localidad}}" class="form-control" minlength="2" maxlength="30" placeholder="Localidad" autofocus required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1" class="form-label">DNI</label>
+                            <input type="text" id="dni" name="dni" {%if usuario.admin != 'True'%} disabled {%endif%} value="{{usuario.dni}}" class="form-control" minlength="9" maxlength="9" placeholder="12345678A" autofocus required>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" id="btnEditar" class="btn btn-primary">Editar</button>
+        </div>
+    </div>
+    </div>
+</div>

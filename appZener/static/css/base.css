@@ -1,0 +1,27 @@
+.contenido {
+    margin-left: 10px;
+    padding-top: 50px;
+}
+
+.centrado {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.container-fluid h1, .container-fluid h1 a, .container-fluid h1 a:visited, .container-fluid h1 a:active {
+    color: blue;
+    font-size: 25pt;
+    text-decoration: none;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: black;
+    float: left;
+    font-size: 17pt;
+    margin-right: 20px;
+}
+
+table {
+    text-align: center;
+    vertical-align: middle;
+}

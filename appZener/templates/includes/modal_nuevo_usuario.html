@@ -1,0 +1,54 @@
+<!-- Modal -->
+<div class="modal fade" id="modalNuevoUsuario" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" data-bs-keyboard="false" data-bs-backdrop="static" >
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nuevo Usuario</h5>
+        <button type="button" class="btn-close btnCerrar" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="card">
+                <div class="card-body">
+                    
+                    <form id="usuarioNuevo" action="/guardarUsuario/" method="POST">{% csrf_token %}
+                        <!-- {{ form }} 
+                        <input type="hidden" id="pk" name="pk" value="{{usuario.id_usuario}}"> -->
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" class="form-control" minlength="3" maxlength="30" placeholder="Nombre" autofocus required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1" class="form-label">Apellidos</label>
+                            <input type="text" id="apellidos" name="apellidos" class="form-control" minlength="3" maxlength="70" placeholder="Apellido1 Apellido2" autofocus required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1" class="form-label">Teléfono</label>
+                            <input type="number" id="telefono" name="telefono" class="form-control" minlength="9" maxlength="11" placeholder="Telefono" autofocus required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="correo" name="correo" placeholder="name@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress" class="form-label">Dirección</label>
+                            <input type="text" class="form-control" id="direccion" name="direccion" placeholder="1234 Main St">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1" class="form-label">Localidad</label>
+                            <input type="text" id="localidad" name="localidad" class="form-control" minlength="2" maxlength="30" placeholder="Localidad" autofocus required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1" class="form-label">DNI</label>
+                            <input type="text" id="dni" name="dni" class="form-control" minlength="9" maxlength="9" placeholder="12345678A" autofocus required>
+                        </div> 
+                    </form>
+
+                </div>
+            </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" id="btnGuardar" class="btn btn-primary btn-success">Guardar</button>
+        </div>
+    </div>
+    </div>
+</div>
