@@ -60,7 +60,7 @@ def nuevo_usuario(nombre,apellidos, telefono, correo, direccion, localidad, dni)
             new_user = User()
 
             #Generar username con iniciales del nombre y apellido
-            nombre_usuario = nombre +""+ apellidos
+            nombre_usuario = nombre +"  "+ apellidos
             nomUs = nombre_usuario.split()
             nombreUsuario = ""
             for n in nomUs:
@@ -75,14 +75,14 @@ def nuevo_usuario(nombre,apellidos, telefono, correo, direccion, localidad, dni)
                     break
                 else:
                     nombreUsuario = "{}{}".format(nombreUsuario, cont)
-
+           
+            print(nombreUsuario+" despues comprobar")
             
             contrasena = User.objects.make_random_password()
             print(contrasena+" contraseña")
 
             
             new_user.username = nombreUsuario
-            print(nombreUsuario+" despues comprobar")
             new_user.first_name = nombre.title()
             new_user.last_name = apellidos.title()
             new_user.set_password(contrasena) 
